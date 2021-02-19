@@ -10,4 +10,6 @@ RUN curl -o /tmp/security_checker -L "https://github.com/fabpot/local-php-securi
 
 USER curl_user
 
-CMD ["local-php-security-checker"]
+COPY entrypoint.sh ./entrypoint.sh
+
+CMD ["entrypoint.sh"]
