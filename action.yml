@@ -8,7 +8,7 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - --path=${{ inputs.lockFile }}
+    - ${{ inputs.lockFile }}
 inputs:
   lockFile:
     description: 'composer.lock file location'
