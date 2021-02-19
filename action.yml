@@ -1,4 +1,4 @@
-name: 'local-php-security-checker'
+name: 'aozora0000/local-php-security-checker'
 description: 'check composer.lock file for security vulnerabilities'
 author: 'aozora0000'
 branding:
