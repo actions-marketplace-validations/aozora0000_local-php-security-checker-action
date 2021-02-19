@@ -8,8 +8,6 @@ RUN curl -o /tmp/security_checker -L "https://github.com/fabpot/local-php-securi
     && mv /tmp/security_checker /usr/bin/local-php-security-checker \
     && chmod +x /usr/bin/local-php-security-checker
 
-USER curl_user
-
 COPY entrypoint.sh ./entrypoint.sh
 
 RUN chmod +x entrypoint.sh
