@@ -1,0 +1,16 @@
+name: 'local-php-security-checker'
+description: 'check composer.lock file for security vulnerabilities'
+author: 'aozora0000'
+branding:
+  icon: 'lock'
+  color: 'red'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - --path=${{ inputs.lockFile }}
+inputs:
+  lockFile:
+    description: 'composer.lock file location'
+    required: false
+    default: 'composer.lock'
