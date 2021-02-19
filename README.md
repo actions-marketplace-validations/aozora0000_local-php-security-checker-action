@@ -13,7 +13,7 @@ Ref. https://github.com/fabpot/local-php-security-checker
 
 ## How to Use
 ```
-uses: actions/local-php-security-checker-action@v1
+uses: aozora0000/local-php-security-checker-action@v1
 with:
     lockFile: './composer.lock'
 ```
