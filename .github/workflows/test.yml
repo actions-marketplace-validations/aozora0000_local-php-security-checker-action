@@ -7,8 +7,17 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Security Check action step
+      - name: Security Check action step Success test
         uses: ./
-        id: local-php-security-checker
+        id: local-php-security-checker-success
         with:
-          lockFile: ./.github/workflows/composer.lock
+          lockFile: ./.github/workflows/success.composer.lock
+      - name: Security Check Action Step Detect Vulnerabilities
+        uses: ./
+        id: local-php-security-checker-failed
+        with:
+          lockFile: ./.github/workflows/failed.composer.lock
+        continue-on-error: false
+      - name: Check on failures
+        if: steps.local-php-security-checker-failed.outputs.status == 'failure'
+        run: exit 0
